@@ -282,6 +282,7 @@ function buildZIP (ents, data) {
             let filepath = `${ent.path}/${ent.name}`;
             if (filepath.startsWith('/'))
                 filepath = filepath.substring(1);
+		/* The following line of code is copied from https://github.com/tuffnatty/harextract/blob/patch-1/harextract.html */
 		filepath = filepath.replace(/\/\/+/g, '/');
             let encoding = data[ent.id].response.content.encoding;			
 			let cb64 = document.getElementById("checkBase64Only");
